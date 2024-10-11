@@ -24,8 +24,43 @@ repositories {
 }
 
 dependencies {
+//	Para a comunicação com o banco de dados usando JPA (Java Persistence API).
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+//	Para criar APIs RESTful.
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+//  https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.3.4'
+
+//	Para validação de dados (ex: campos obrigatórios nos formulários).
+//  https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation:3.3.4'
+
+//	Para implementar login e controle de acesso
+//  https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+	implementation 'org.springframework.security:spring-security-core:6.3.3'
+
+//	Para lidar com exceções e logs.
+//	https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+	implementation 'org.springframework.boot:spring-boot-starter-aop:3.3.4'
+
+//	Para melhorar o desempenho da loja com caching.
+//	https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis:3.3.4'
+
+//	Para evitar o código repetitivo de getters, setters, etc.
+//	https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly 'org.projectlombok:lombok:1.18.34'
+
+//	Para mapear objetos (ex: entidades para DTOs)
+//	https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+	implementation 'org.modelmapper:modelmapper:3.2.1'
+
+//	h2 é um banco de dados usado dentro do proprio projeto
+//  https://mvnrepository.com/artifact/com.h2database/h2
+	testImplementation 'com.h2database:h2:2.3.232'
+
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

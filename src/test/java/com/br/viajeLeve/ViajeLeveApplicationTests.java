@@ -1,10 +1,10 @@
-package com.br.baganas;
+package com.br.viajeLeve;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BaganasApplicationTests {
+class ViajeLeveApplicationTests {
 
 	@Test
 	void contextLoads() {
