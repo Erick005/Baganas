@@ -1,4 +1,4 @@
-package com.br.viajeLeve.model;
+package com.br.viajeLeve.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 
 @Entity
 @Data
-public class Pagamento {
+public class PagamentoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +22,5 @@ public class Pagamento {
 
     @OneToOne
     @JoinColumn(name = "pedido_id", nullable = false)
-    private Pedido pedido_id;
+    private PedidoEntity pedido_Entity_id;
 }

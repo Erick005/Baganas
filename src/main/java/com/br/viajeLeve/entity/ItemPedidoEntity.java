@@ -1,4 +1,4 @@
-package com.br.viajeLeve.model;
+package com.br.viajeLeve.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 
 @Entity
 @Data
-public class Item_pedido {
+public class ItemPedidoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +19,11 @@ public class Item_pedido {
 
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
-    private Produto produto_id;
+    private ProdutoEntity produto_Entity_id;
 
     @ManyToOne
     @JoinColumn(name = "pedido_id", nullable = false)
-    private Pedido pedido_id;
+    private PedidoEntity pedido_Entity_id;
 
     public String getPrecoUnitarioFormatado() {
         DecimalFormat df = new DecimalFormat("#.##0,00");

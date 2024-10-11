@@ -1,4 +1,4 @@
-package com.br.viajeLeve.model;
+package com.br.viajeLeve.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.math.BigInteger;
 
 @Entity
 @Data
-public class Categoria {
+public class CategoriaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

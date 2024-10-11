@@ -1,4 +1,4 @@
-package com.br.viajeLeve.model;
+package com.br.viajeLeve.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.math.BigInteger;
         uniqueConstraints = {@UniqueConstraint(columnNames = {"email", "cpf"})} // não vai deixar o banco de dados inserir informações duplicadas.
 )
 @Data
-public class Usuario {
+public class UsuarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

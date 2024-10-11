@@ -1,4 +1,4 @@
-package com.br.viajeLeve.model;
+package com.br.viajeLeve.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 
 @Entity
 @Data
-public class Pedido {
+public class PedidoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario_id;
+    private UsuarioEntity usuario_Entity_id;
 
     public String getTotalFormatado() {
         DecimalFormat df = new DecimalFormat("#.##0,00");
