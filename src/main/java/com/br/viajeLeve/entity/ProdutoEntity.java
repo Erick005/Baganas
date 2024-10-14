@@ -29,11 +29,6 @@ public class ProdutoEntity {
     private Integer quantidade_estoque;
 
     @ManyToOne // Relacionamento de Muitos para Um. CE
-    @JoinColumn(name = "categoria_nome")
-    private CategoriaEntity categoria_nome;
-
-//    public String getPrecoFormatado() {
-//        DecimalFormat df = new DecimalFormat("#.##0,00");
-//        return df.format(preco);
-//    }
+    @JoinColumn(name = "categoria_id")
+    private CategoriaEntity categoria_id;
 }

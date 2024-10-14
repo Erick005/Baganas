@@ -53,6 +53,8 @@ dependencies {
 //	https://mvnrepository.com/artifact/org.projectlombok/lombok
 	compileOnly 'org.projectlombok:lombok:1.18.34'
 
+	annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
 //	Para mapear objetos (ex: entidades para DTOs)
 //	https://mvnrepository.com/artifact/org.modelmapper/modelmapper
 	implementation 'org.modelmapper:modelmapper:3.2.1'

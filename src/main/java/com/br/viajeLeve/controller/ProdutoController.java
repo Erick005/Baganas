@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,16 +17,17 @@ public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
 
-    @PostMapping("/salvar")
-    public ResponseEntity salvarProduto(@RequestBody ProdutoRequest produtoRequest) {
-        produtoService.salvarProduto(produtoRequest);
+    @PostMapping("/cadastrar")
+    public ResponseEntity cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {
+        produtoService.cadastrarProduto(produtoRequest);
         return ResponseEntity.status(202).build();
     }
 
     @GetMapping
     public List<ProdutoRequest> listarproduto(){
         List<ProdutoRequest> produtos = new ArrayList<>();
-        produtos.add(new ProdutoRequest("Mala 01", "Mala de avião", 500.00, 2, "Mala de mão" ));
+        BigInteger preco = BigInteger.valueOf(1);
+        produtos.add(new ProdutoRequest("Mala 01", "Mala de avião", 500.00, 2, "Mala de mão", preco));
         return produtos;
     }
 
