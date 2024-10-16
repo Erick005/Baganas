@@ -1,13 +1,13 @@
 package com.br.viajeLeve.controller;
 
 import com.br.viajeLeve.model.salvarProduto.request.ProdutoRequest;
+import com.br.viajeLeve.model.salvarProduto.response.ProdutoResponse;
 import com.br.viajeLeve.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,12 +23,10 @@ public class ProdutoController {
         return ResponseEntity.status(202).build();
     }
 
-    @GetMapping
-    public List<ProdutoRequest> listarproduto(){
-        List<ProdutoRequest> produtos = new ArrayList<>();
-        BigInteger preco = BigInteger.valueOf(1);
-        produtos.add(new ProdutoRequest("Mala 01", "Mala de avião", 500.00, 2, "Mala de mão", preco));
-        return produtos;
+    @GetMapping("/buscar-produtos")
+    public ResponseEntity<List<ProdutoResponse>> listarTodos() {
+        List<ProdutoResponse> produtos = produtoService.listarProdutos();
+        return new ResponseEntity<>(produtos, HttpStatus.OK);
     }
 
 }
